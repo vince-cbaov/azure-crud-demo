@@ -1,0 +1,20 @@
+
+trigger:
+  - dev
+
+pool:
+  vmImage: 'ubuntu-22.04'
+
+steps:
+  - task: UsePythonVersion@0
+    inputs:
+      versionSpec: '3.10'
+
+  - script: |
+      python -m pip install --upgrade pip
+      pip install -r requirements.txt
+    displayName: 'Install dependencies'
+
+  - script: |
+      pytest -v
+    displayName: 'Run tests'
