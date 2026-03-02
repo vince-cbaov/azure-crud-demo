@@ -27,7 +27,6 @@ def test_read_users(mock_db_cursor):
     {"id": 2, "name": "Bob", "age": 31},
     {"id": 3, "name": "James", "age": 41},
     {"id": 4, "name": "Jane", "age": 35},
-    {"id": 5, "name": "SHOULD FAIL", "age": 99},  # <--- Failing line
     ]
 
 @patch('app.crud.db_cursor')
